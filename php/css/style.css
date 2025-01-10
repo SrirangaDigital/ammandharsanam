@@ -1,0 +1,385 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+:root{
+  --main-text-color: #3d3536;
+  --navlink-hover-color: #9c581b;
+  --head-background-color: rgba(150, 75, 0, 0.5);
+  --site-background-color: #FFF;
+  --archive-icon-color: #AAA;
+  --article-download-color: #3372df;
+  --second-nav-background-color: #EEE;
+  --homepage-banner-background-color:rgba(255, 254, 204, 0.9);
+  --paralax-heading-h3: brown;
+  --breadcrumb-bar-color: #3372df;
+  --article-feature-color: #be0709;
+  --issue-color: #777;
+}
+
+@font-face {
+ font-family: 'Siddhantaa';
+ src: url('siddhanta.ttf');
+}
+
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Roboto", sans-serif;
+  color: var(--main-text-color);
+  background-color: var(--site-background-color);
+}
+
+body, html {
+  /* important */
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.maincontent{
+  font-size: 20px !important;
+  line-height: 1.75;
+}
+
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+
+.clr1{
+  color: var(--breadcrumb-bar-color) !important;
+}
+
+.clr2{
+  color: var(--article-feature-color) !important;
+}
+
+.clr3{
+  color: var(--main-text-color) !important;
+}
+
+.clr4{
+  color: var(--navlink-hover-color) !important;
+}
+
+.clr5{
+  color: var(--issue-color)  !important;
+}
+
+
+
+
+.gapAbove {
+  margin-top: 75px !important;  
+}
+
+.gapBelow {
+  margin-bottom: 75px !important;  
+}
+
+.gapAboveSmall {
+  margin-top: 25px !important;  
+}
+
+.gapBelowSmall {
+  margin-bottom: 25px !important;  
+}
+
+.gapAboveLarge {
+  margin-top: 125px !important;  
+}
+
+.gapBelowLarge {
+  margin-bottom: 125px !important;  
+}
+
+
+.archiveIcon{
+  width: 140px;
+  line-height: 0px;
+  margin-bottom: 60px;
+  text-align: center;
+  float: left;
+}
+
+.archiveIcon a{
+  display: inline-block;
+  color: var(--archive-icon-color);
+  transition: color 0.3s ease-out;
+  text-decoration: none;
+}
+
+.archiveIcon a:HOVER{
+  color: var(--navlink-hover-color);
+  transition: color 0.3s ease-out;
+}
+
+.archiveIcon div:first-child {
+  font-size: 70px;
+}
+
+.archiveIcon div:last-child {
+  font-size: 20px;
+  line-height: 2;
+}
+
+
+.article{
+  margin: 30px 0;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  line-height: 1.5;
+  min-height: 50px;
+  border-left: 5px solid #3372df;
+}
+
+.article:hover{
+  box-shadow: 0 1px 5px rgba(34, 25, 25, 0.6);
+}
+
+.article .aTitle{
+  font-size: 20px;
+}
+.article .download{
+	font-size:15px;
+	color: var(--article-download-color);
+}
+.article .aAuthor{
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.article .aFeature{
+  font-size: 16px;
+}
+
+.article .aIssue{
+  font-size: 16px;
+}
+
+.author{
+  margin: 10px 0;
+  padding: 10px 10px 10px 30px;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  line-height: 1.5;
+  min-height: 30px;
+  border-left: 1px solid #be0709;
+}
+
+.author:hover{
+  box-shadow: 0 1px 5px rgba(34, 25, 25, 0.6);
+}
+
+.author .aAuthor{
+  font-size: 16px;
+}
+
+
+.alphabet .letter{
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.alphabet .letter a:HOVER{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+
+.moreNav{
+  display: inline-block;
+}
+
+.count{
+  font-style: italic;
+}
+
+
+
+.headbanner{
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--homepage-banner-background-color);
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 45vh;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.parallax-content h3{
+  text-align: center;
+  color: var(--paralax-heading-h3) !important;
+  font-size: 3em;
+  text-shadow: 0 0px 0px rgba(0,0,0,0.3);
+}
+
+.volumes .card{
+  width: auto;
+  padding: 0px 0px;
+  margin: 10px 4px;
+}
+
+.volumes .card a img{
+  height: 140px;
+}
+
+.volumes .card-body{
+  font-size: 16px;
+  padding: 0px 0px;
+  text-align: center;
+}
+
+nav.cd-sec-main-nav ul{
+  margin-top: 10px;
+}
+
+nav.cd-sec-main-nav ul li{
+  display: inline !important;
+  margin-right: 20px; 
+}
+
+nav.cd-sec-main-nav ul li a{
+  font-size: 16px;
+}
+
+nav.cd-sec-main-nav ul li a:HOVER{
+  color: var(--navlink-hover-color);
+  line-height: normal;
+  background: transparent;
+  transition: color 0.3s ease-out;
+}
+
+@media (min-width: 768px) { 
+
+  header nav ul.navbar-nav li a{
+    margin-left: 2.5em;
+  }  
+
+
+  header nav a.navbar-brand{
+    margin-left: 1.5em;
+  }
+
+  .headbanner{
+    margin-left: 60%;
+    width: 400px;
+  }
+
+  .archiveIcon{
+    width: 175px !important;
+  }
+
+  .volumes .card{
+    padding: 0px 0px;
+    margin: 10px 4px;
+  }
+
+  .volumes .card a img{
+    height: 180px;
+  }
+
+}
+
+header nav a.navbar-brand img{
+  height: 55px;
+}
+
+header nav ul.navbar-nav{
+  margin-right: 2em;
+}
+
+header nav ul.navbar-nav li a{
+  display: inline-block;
+  height: auto;
+  line-height: normal;
+  background: transparent;
+  padding: .6em 0em;
+  border-top: none;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+header nav ul.navbar-nav li a:HOVER{
+  color: var(--navlink-hover-color);
+}
+
+header nav ul.navbar-nav li.dropdown ul{
+  padding: 1em 1em;
+}  
+
+header nav ul.navbar-nav li a.dropdown-item{
+  margin-left: 0.1em !important;
+}
+
+header nav ul.navbar-nav li a.dropdown-item:HOVER{
+  color: var(--navlink-hover-color);
+  line-height: normal;
+  background: transparent;
+  transition: color 0.3s ease-out;
+}
+
+.extra-info-bar{
+  position: fixed;
+  top: 56px; /* Adjust based on navbar height */
+  width: 100%;
+  padding: 10px;
+  z-index: 9; /* Lower than navbar */
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--second-nav-background-color);
+  text-align: center;
+}
+
+.itl{
+  font-style: italic;
+}
+
+.sml{
+  font-size: 18px !important;
+}
+
+.bld{
+  font-weight: bold !important;
+}
+
+label{
+  font-size: 16px;
+}
+
+footer {
+  font-size: 14px;
+  margin-top: 50px !important;
+  margin-bottom: 16px !important;
+  text-align: center; 
+}

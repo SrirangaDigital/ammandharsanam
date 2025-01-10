@@ -1,0 +1,7 @@
+Volumes/
+ReadWrite/
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
+*/*/*/.DS_Store
+
