@@ -45,6 +45,7 @@ if($num_rows > 0)
 		$dpart = preg_replace("/^0/", "", $part);
 		$dpart = preg_replace("/\-0/", "-", $dpart);
 		//echo (($row['month'] == '01') && ($isFirst == 0)) ? '<div class="deLimiter">|</div>' : '';
+		$mon_details = getMonth($row['month']) ;
 		$monthdetails = getMonth($row['month']) . ", " . $row['year'];
 		$monthdetails = preg_replace('/^,/', '', $monthdetails);
 		$imgName = $volume . '_' . $row['part'] . '.jpg';
@@ -52,12 +53,12 @@ if($num_rows > 0)
 		$monthdetails = ($row['part'] == '99' )? 'Special Issue' : $monthdetails;
 
 		echo '<div class="card shadow col-1">';
-		echo '<a href="toc.php?vol=' . $volume . '&amp;part=' . $row['part'] . '" title="'. $monthdetails .'"><img src="img/covers/i/' . $imgName . '" class="img-fluid" alt="issue '. $dpart .'" /></a>';
+		echo '<a target="_blank" href="bookreader/templates/book.php?volume=' . $volume . '&amp;part=' . $row['part'] . '" title="'. $monthdetails .'"><img src="img/covers/i/' . $imgName . '" class="img-fluid" alt="issue '. $dpart .'" /></a>';
 		echo '<div class="card-body">';
-		echo '<a href="toc.php?vol=' . $volume . '&amp;part=' . $row['part'] . '" title="'. $monthdetails .'">'. $partName  .'</a>';
+		echo '<a target="_blank" href="bookreader/templates/book.php?volume=' . $volume . '&amp;part=' . $row['part'] . '" title="'. $monthdetails .'">'. $mon_details  .'</a>';
 		echo '</div>';
 		echo '</div>';
-
+		// /bookreader/templates/book.php?
 
 		// if($row['part'] == '99')
 		// {

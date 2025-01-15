@@ -14,7 +14,7 @@
 include("connect.php");
 require_once("common.php");
 
-$query = 'select distinct volume from article order by volume';
+$query = 'select distinct volume,year from article order by volume';
 
 $result = $db->query($query); 
 $num_rows = $result ? $result->num_rows : 0;
@@ -30,7 +30,7 @@ if($num_rows > 0)
 		echo '<div class="card shadow col-sm-4 col-md-1">';
 		echo '<a href="get-parts.php?volume=' . $row['volume'] . '"><img src="img/covers/v/' . $row['volume'] . '.jpg" class="img-fluid" alt="volume '. intval($row['volume']) .'" /></a>';
 		echo '<div class="card-body">';
-		echo '<a href="get-parts.php?volume=' . $row['volume'] . '">Vol '. intval($row['volume']) .'</a>';
+		echo '<a href="get-parts.php?volume=' . $row['volume'] . '"> '. ($row['year']) .'</a>';
 		echo '</div>';
 		echo '</div>';
 	}
