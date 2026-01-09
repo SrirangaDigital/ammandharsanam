@@ -3,7 +3,8 @@
         <div class="row justify-content-center gapAboveLarge">
             <div class="col-sm-12 col-md-8">
                 <div class="extra-info-bar fixed-top">  
-                    <h1 class="clr1 pt-5">Archive &gt; Search</h1>
+                    <!-- <h1 class="clr1 pt-5">Archive &gt; Search</h1> -->
+                    <h1 class="clr1 pt-5">தேடல்</h1>
 <?php include("include_secondary_nav.php");?>
                 </div>    
 <?php
@@ -15,9 +16,9 @@ require_once("common.php");
                 <div class="archive_search gapAboveLarge">
                     <form method="get" action="search-result.php" class="row justify-content-center">
                         <div class="col-11 col-md-5">
-                            <label for="textfield2" class="titlespan form-label">Title</label>
-                            <input name="title" type="text" class="form-control titlespan wide" id="textfield2" maxlength="150"/>
-                            <label for="autocomplete" class="form-label titlespan mt-2">Author</label>
+                            <label for="textfield2" class="titlespan form-label" >கட்டுரைகள்</label>
+                            <input name="title" type="text" class="form-control titlespan wide" id="textfield2" maxlength="150" />
+                            <label for="autocomplete" class="form-label titlespan mt-2 " >ஆசிரியர்கள்</label>
                             <input name="author" type="text" class="form-control titlespan wide" id="autocomplete" maxlength="150" />
 <?php
 $query_ac = "select * from author order by authorname";
@@ -39,7 +40,8 @@ echo $source_ac . ']});</script>';
 if($result_ac){$result_ac->free();}
 
 ?>
-                        <label class="titlespan form-label mt-2">Category</label>
+                        <!-- <label class="titlespan form-label mt-2">ಸ್ಥಿರ ಶೀರ್ಷಿಕೆಗಳು</label> -->
+                        <label class="titlespan form-label mt-2">நிலையான தலைப்புகள்</label>
                         <select name="featid" class="form-select titlespan wide">
                             <option value="">&nbsp;</option>
 <?php
@@ -64,9 +66,7 @@ if($result){$result->free();}
 
 ?>
                         </select>
-                        <label for="textfield3" class="titlespan form-label mt-2">Words</label>
-                        <input name="text" type="text" class="form-control titlespan wide" id="textfield3" maxlength="150"/>
-                        <label class="titlespan form-label mt-4">Year</label>
+                        <label class="titlespan form-label mt-4">ஆண்டு</label>
                         <div class="input-group">
                             <select name="year1" class="form-select">
                                 <option value="">&nbsp;</option>
@@ -91,7 +91,7 @@ if($result){$result->free();}
 
 ?>
                                     </select>
-                                    <span class="small">&nbsp;to&nbsp;</span>
+                                    <span class="small">&nbsp;&ndash;&nbsp;</span>
                                     <select name="year2" class="form-select">
                                         <option value="">&nbsp;</option>
 
@@ -125,3 +125,42 @@ $db->close();
         </div> 
     </main> 
 <?php include("../inc/include_footer.php");?>
+<?php
+if (
+    $title === "" &&
+    $author === "" &&
+    $text === "" &&
+    $featid === "" &&
+    $year1 === "" &&
+    $year2 === ""
+) {
+    echo '<p class="gapAboveLarge text-center mt-5 clr2">
+            Please enter at least one search criteria.
+          </p>';
+    include("../inc/include_footer.php");
+    exit;
+}
+?>
+
+<script>
+function validateSearchForm() {
+    const fields = [
+        document.getElementById('title').value.trim(),
+        document.getElementById('author').value.trim(),
+        document.getElementById('text').value.trim(),
+        document.getElementById('year1').value.trim(),
+        document.getElementById('year2').value.trim(),
+        document.getElementById('featid').value.trim()
+    ];
+
+    const hasValue = fields.some(v => v !== "");
+
+    if (!hasValue) {
+        alert("Please enter at least ONE search field (Title, Author, Text, or Year).");
+
+        
+        return false;
+    }
+    return true;
+}
+</script>

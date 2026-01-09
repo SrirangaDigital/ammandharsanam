@@ -2743,11 +2743,11 @@ BookReader.prototype.search = function(term) {
     
     $('#textSrch').blur(); //cause mobile safari to hide the keyboard     
     
-    var url = '../fulltext/inside.php?book_id='+book.book_id; //remove the port and userdir
-		url    += '&type='+book.lang;
+    var url = '../fulltext/inside.php?year='+book.year; //remove the port and userdir
         url    += '&q='+term;
         //~ url    += '&q='+escape(term); ORIGINAL WAS LIKE THIS
-        
+        url    += '&month='+book.month;
+        //~ console.log('search called with term=' + url);
     term = term.replace(/\//g, ' '); // strip slashes, since this goes in the url
     this.searchTerm = term;
     
@@ -2759,6 +2759,7 @@ BookReader.prototype.search = function(term) {
 // BRSearchCallback()
 //______________________________________________________________________________
 BookReader.prototype.BRSearchCallback = function(results) {
+    console.log(results);
     br.removeSearchResults();
     br.searchResults = results; 
 	if (0 == results.matches.length) {

@@ -29,13 +29,10 @@ function isValidTitle($title)
 {
 	return is_array($title) ? false : true;
 }
-
 function isValidLetter($letter)
 {
-	if(is_array($letter)){return false;}
-	return preg_match("/^([A-Z]|Special)$/", $letter) ? true : false;
+	return is_array($letter) ? false : true;
 }
-
 function isValidVolume($vol)
 {
 	if(is_array($vol)){return false;}
@@ -45,7 +42,7 @@ function isValidVolume($vol)
 function isValidPart($part)
 {
 	if(is_array($part)){return false;}
-	return preg_match("/([0-9][0-9]\_[0-9][0-9])||([0-9][0-9])/", $part) ? true : false;
+	return preg_match("/([0-9][0-9]\-[0-9][0-9])||([0-9][0-9])/", $part) ? true : false;
 }
 
 function isValidYear($year)
@@ -109,15 +106,35 @@ function getYearMonth($volume, $part)
 	$query = "select distinct year,month from article where volume='$volume' and part='$part'";
 	$result = $db->query($query);
 	$num_rows = $result ? $result->num_rows : 0;
-	if($num_rows > 0) {
-
+	if($num_rows > 0)
+	{
 		$row = $result->fetch_assoc();
 		return($row);
 	}
-	else {
-
+	else
+	{
 		$row['year'] = '';
 		$row['month'] = '';
+		return($row);
+	}
+}
+
+function getmaasa($volume, $part)
+{
+	include("connect.php");
+
+	$query = "select distinct maasa, samvatsara from article where volume='$volume' and part='$part'";
+	$result = $db->query($query);
+	$num_rows = $result ? $result->num_rows : 0;
+	if($num_rows > 0)
+	{
+		$row = $result->fetch_assoc();
+		return($row);
+	}
+	else
+	{
+		$row['maasa'] = '';
+		$row['samvatsara'] = '';
 		return($row);
 	}
 }
@@ -129,46 +146,56 @@ function getYear($volume)
 	$query = "select distinct year from article where volume='$volume'";
 	$result = $db->query($query);
 	$num_rows = $result ? $result->num_rows : 0;
-	if($num_rows > 0) {
-
+	if($num_rows > 0)
+	{
 		$year = '';
-		while($row = $result->fetch_assoc()) {
-	
+		while($row = $result->fetch_assoc())
+		{
 			$year = $year . '-' . $row['year'];
 		}
 		$year = preg_replace('/^\-/', '', $year);
 		$year = preg_replace('/\-[0-9][0-9]([0-9][0-9])/', '-$1', $year);
 		return( $year );
 	}
-	else {
-
+	else
+	{
 		return( '' );
 	}
 }
 
-function getIssue($part)
-{
-	$part = preg_replace('/^[0]/', '', $part);
-	return $part;
-}
-
 function getMonth($month)
 {
-	$month = preg_replace('/01/', 'January', $month);
-	$month = preg_replace('/02/', 'February', $month);
-	$month = preg_replace('/03/', 'March', $month);
-	$month = preg_replace('/04/', 'April', $month);
-	$month = preg_replace('/05/', 'May', $month);
-	$month = preg_replace('/06/', 'June', $month);
-	$month = preg_replace('/07/', 'July', $month);
-	$month = preg_replace('/08/', 'August', $month);
-	$month = preg_replace('/09/', 'September', $month);
-	$month = preg_replace('/10/', 'October', $month);
-	$month = preg_replace('/11/', 'November', $month);
-	$month = preg_replace('/12/', 'December', $month);
-	$month = preg_replace('/^0$/', '', $month);
+	$month = preg_replace('/01/', 'ஜனவரி', $month);
+	$month = preg_replace('/02/', 'பிப்ரவரி', $month);
+	$month = preg_replace('/03/', 'மார்ச்', $month);
+	$month = preg_replace('/04/', 'ஏப்ரல்', $month);
+	$month = preg_replace('/05/', 'மே', $month);
+	$month = preg_replace('/06/', 'ஜூன்', $month);
+	$month = preg_replace('/07/', 'ஜூலை', $month);
+	$month = preg_replace('/08/', 'ஆகஸ்ட்', $month);
+	$month = preg_replace('/09/', 'செப்டம்பர்', $month);
+	$month = preg_replace('/10/', 'அக்டோபர்', $month);
+	$month = preg_replace('/11/', 'நவம்பர்', $month);
+	$month = preg_replace('/12/', 'டிசம்பர்', $month);
+
+	$month = preg_replace('/-/', ' &ndash; ', $month);
 	
 	return $month;
+}
+function toKannada($value)
+{
+	$value = preg_replace('/0/', '೦', $value);
+	$value = preg_replace('/1/', '೧', $value);
+	$value = preg_replace('/2/', '೨', $value);
+	$value = preg_replace('/3/', '೩', $value);
+	$value = preg_replace('/4/', '೪', $value);
+	$value = preg_replace('/5/', '೫', $value);
+	$value = preg_replace('/6/', '೬', $value);
+	$value = preg_replace('/7/', '೭', $value);
+	$value = preg_replace('/8/', '೮', $value);
+	$value = preg_replace('/9/', '೯', $value);
+	
+	return $value;
 }
 /*
 isValidTitle, isValidFeature, isValidAuthor, isValidText

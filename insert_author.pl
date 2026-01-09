@@ -7,9 +7,8 @@ $pwd = $ARGV[3];
 
 use DBI();
 
-# open(IN,"<:utf8","tattvaloka.xml") or die "can't open tattvaloka.xml\n";
+open(IN,"<:utf8","ammadarshnam.xml") or die "can't open ammadarshnam.xml\n";
 
-open(IN,"<:utf8","amma.xml") or die "can't open amma.xml\n";
 
 my $dbh=DBI->connect("DBI:mysql:database=$db;host=$host","$usr","$pwd");
 
@@ -21,7 +20,7 @@ $sth_enc=$dbh->prepare("set names utf8");
 $sth_enc->execute();
 $sth_enc->finish();
 
-$sth11=$dbh->prepare("CREATE TABLE author(authorname varchar(400), authid int(6) auto_increment, primary key(authid))auto_increment=10001 ENGINE=MyISAM character set utf8 collate utf8_general_ci;");
+$sth11=$dbh->prepare("CREATE TABLE author(authorname varchar(400), authid int(6) auto_increment, primary key(authid))auto_increment=10001 ENGINE=MyISAM CHARACTER SET utf8 collate utf8_general_ci;");
 $sth11->execute();
 $sth11->finish(); 
 
@@ -29,9 +28,9 @@ $line = <IN>;
 
 while($line)
 {
-	if($line =~ /<author>(.*)<\/author>/)
+	if($line =~ /<author type="(.*)" sal="(.*)">(.*)<\/author>/)
 	{
-		$authorname = $1;
+		$authorname = $3;
 		insert_authors($authorname);
 	}
 	$line = <IN>;

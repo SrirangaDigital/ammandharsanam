@@ -1,35 +1,36 @@
 <?php
+	
 	$index = $_GET['index'];
-	$book_id = $_GET['book_id'];
+	$volume = $_GET['volume'];
+	$part = $_GET['part'];
 	$imgurl = $_GET['imgurl'];
 	$reduce = round($_GET['level']);
 	$book = $_POST['book'];
 	$img = preg_split("/\./",$book[$index]);
 	$mode = $_GET['mode'];
 
-	
 	if($reduce == 1)
 	{
-		$pdfurl = '../../public/data/' . str_replace('_', '/',$book_id) . '/pdf';
-		$imgurl = '../../public/data/' . str_replace('_', '/',$book_id) . '/jpg/1';
-
-
+		$imgurl = "../../../Volumes/jpg/1/".$volume."/".$part;
 		$scale = 2100;
-
+		$djvurl = "../../../Volumes/djvu/".$volume."/".$part;
+		$tifurl = "../../../Volumes/tif/".$volume."/".$part;
 		
-		if(file_exists($pdfurl)){
-			
-			$page = $img[0] . ".jpg";				
-			$cmd = "convert -density 300 -resize x" . $scale . " " . $pdfurl . "/index.pdf\[" . $index . "\] -alpha remove " . $imgurl . "/". $page;
-			exec($cmd);	
+		if(!file_exists($tifurl."/".$img[0].".tif"))
+		{
+			$cmd = "ddjvu -format=tif ".$djvurl."/".$img[0].".djvu ".$tifurl."/".$img[0].".tif";
+			exec($cmd);
 		}
-		
+		if(!file_exists($imgurl."/".$img[0].".jpg"))
+		{
+			$cmd="convert $tifurl/".$img[0].".tif -resize x".$scale." $imgurl/".$img[0].".jpg";
+			exec($cmd);
+		}
 	}
 	$array['id'] = "#pagediv".$index;
 	$array['mode'] = $mode;
-	$array['img'] = $imgurl . "/" .$img[0] . ".jpg";
-
-
+	$array['img'] = $imgurl."/".$img[0].".jpg";
+	
 	echo json_encode($array);
 	//~ Update manifest file to download the request file.
 	$myfile = fopen("appcache.manifest", "w") or die("Unable to open file!!!");

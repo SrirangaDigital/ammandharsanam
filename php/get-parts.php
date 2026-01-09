@@ -3,7 +3,7 @@
 		<div class="row justify-content-center gapAboveLarge">
 			<div class="col-sm-12 col-md-8">
 				<div class="extra-info-bar fixed-top">	
-					<h1 class="clr1 pt-5">Archive &gt; Issues</h1>
+					<h1 class="clr1 pt-5">மலர்கள் &gt; கட்டுரைகள்</h1>
 <?php include("include_secondary_nav.php");?>
 				</div>		
 			</div>
@@ -45,30 +45,19 @@ if($num_rows > 0)
 		$dpart = preg_replace("/^0/", "", $part);
 		$dpart = preg_replace("/\-0/", "-", $dpart);
 		//echo (($row['month'] == '01') && ($isFirst == 0)) ? '<div class="deLimiter">|</div>' : '';
-		$mon_details = getMonth($row['month']) ;
 		$monthdetails = getMonth($row['month']) . ", " . $row['year'];
 		$monthdetails = preg_replace('/^,/', '', $monthdetails);
 		$imgName = $volume . '_' . $row['part'] . '.jpg';
-		$partName = ($row['part'] == '99' )? 'Special Issue' : 'Issue '. $dpart;
-		$monthdetails = ($row['part'] == '99' )? 'Special Issue' : $monthdetails;
+		$partName = ($row['part'] == '99' )? 'கட்டுரைகள்' : 'கட்டுரைகள் '. $dpart;
+		$monthdetails = ($row['part'] == '99' )? 'கட்டுரைகள்' : $monthdetails;
 
 		echo '<div class="card shadow col-1">';
-		echo '<a target="_blank" href="bookreader/templates/book.php?volume=' . $volume . '&amp;part=' . $row['part'] . '" title="'. $monthdetails .'"><img src="img/covers/i/' . $imgName . '" class="img-fluid" alt="issue '. $dpart .'" /></a>';
+		echo '<a href="toc.php?vol=' . $volume . '&amp;part=' . $row['part'] . '" title="'. $monthdetails .'"><img src="img/covers/i/' . $imgName . '" class="img-fluid" alt="issue '. $dpart .'" /></a>';
 		echo '<div class="card-body">';
-		echo '<a target="_blank" href="bookreader/templates/book.php?volume=' . $volume . '&amp;part=' . $row['part'] . '" title="'. $monthdetails .'">'. $mon_details  .'</a>';
+		echo '<a href="toc.php?vol=' . $volume . '&amp;part=' . $row['part'] . '" title="'. $monthdetails .'">' . $partName  . '<br /><span class="monthdisplay badge text-bg-secondary">' . getMonth($row['month']) . '</span><br /><span class="small badge text-bg-warning">' .  $row['year']  . '</span></a>';
 		echo '</div>';
 		echo '</div>';
-		// /bookreader/templates/book.php?
 
-		// if($row['part'] == '99')
-		// {
-		// 	echo '<div class="aIssue"><a href="toc.php?vol=' . $volume . '&amp;part=' . $row['part'] . '" title=Special Issue>Special Issue</a></div>';
-		// }
-		// else
-		// {
-		// 	echo '<div class="aIssue"><a href="toc.php?vol=' . $volume . '&amp;part=' . $row['part'] . '" title="'. $monthdetails .'">Issue ' . $dpart . '</a></div>';
-		// }
-		// $isFirst = 0;
 	}
 }
 

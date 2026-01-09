@@ -223,7 +223,7 @@
 					<div><a href="toc.php?vol=100&amp;part=12">December 2013 (Volume 100, Issue 12)</a></div>
 					<div><a href="../Volumes/100/12/index.djvu?djvuopts&amp;zoom=page">Swami Vivekananda - The Man and His Message</a></div>
 				</div>
-			</div> 
-		</div> 
-	</main> 
+			</div> <!-- cd-container -->
+		</div> <!-- cd-scrolling-bg -->
+	</main> <!-- cd-main-content -->
 <?php include("include_footer.php");?>

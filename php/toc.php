@@ -11,20 +11,45 @@ if(isset($_GET['vol'])){$volume = $_GET['vol'];}else{$volume = '';}
 if(isset($_GET['part'])){$part = $_GET['part'];}else{$part = '';}
 
 $dpart = preg_replace("/^0/", "", $part);
-$dpart = preg_replace("/\-0/", "-", $dpart);
+$dpart = preg_replace("/\-0/", "&ndash;", $dpart);
 
 $yearMonth = getYearMonth($volume, $part);
+
+$maasa = getmaasa($volume, $part);
+$info = '';
+
+if($yearMonth['month'] != '')
+{
+	$info = $info . getMonth($yearMonth['month']);
+}
+if($yearMonth['year'] != '')
+{
+	$info = $info . ' <span class="font_size">' . intval($yearMonth['year']) . '</span>';
+}
+if($maasa['maasa'] != '')
+{
+	$info = $info . ', ' . $maasa['maasa'] . '&nbsp;ಮಾಸ';
+}
+if($maasa['samvatsara'] != '')
+{
+	$info = $info . ', ' . $maasa['samvatsara'] . '&nbsp;ಸಂವತ್ಸರ';
+}
+$info = preg_replace("/^,/", "", $info);
+$info = preg_replace("/^ /", "", $info);
+
 
 echo '<div class="extra-info-bar fixed-top">';
 
 if($part == '99')
 {
-	echo '<h1 class="clr1 pt-5">Archive &gt; Special Issue' . ' (Volume ' . intval($volume) . ')</h1>';
+	echo '<h1 class="clr1 pt-5">மலர்கள் &gt; இதழ்' . ' (Volume ' . intval($volume) . ')</h1>';
 }
 else
 {
-	echo '<h1 class="clr1 pt-5">Archive &gt; ' . getMonth($yearMonth['month']) . ' ' . $yearMonth['year'] . ' (Volume ' . intval($volume) . ', Issue ' . $dpart . ')</h1>';
+	echo '<h1 class="clr1 pt-5">மலர்கள் &gt; மலர்  ' . intval($volume) . ', இதழ்  '. $dpart . '</h1>';
+	// echo '<p class="small info-color"> (' . $info . ')</p>';
 }
+
 include("include_secondary_nav.php");
 echo '</div>';
 echo '</div>';
@@ -59,6 +84,8 @@ if($num_rows > 0)
 		
 		$dpart = preg_replace("/^0/", "", $row['part']);
 		$dpart = preg_replace("/\-0/", "-", $dpart);
+		$sumne = preg_split('/-/' , $row['page']);
+		$row['page'] = $sumne[0];
 		if($result3){$result3->free();}
 
 		echo '<div class="article">';
@@ -67,7 +94,7 @@ if($num_rows > 0)
 		echo '	<span class="aTitle"><a target="_blank" href="bookreader/templates/book.php?volume=' . $row['volume'] . '&part=' . $part . '&page=' . $row['page'] . '">' . $row['title'] . '</a></span><br />';
 		if($row['authid'] != 0) {
 
-			echo '	<span class="aAuthor itl">by ';
+			echo '	<span class="aAuthor itl">&mdash; ';
 			$authids = preg_split('/;/',$row['authid']);
 			$authornames = preg_split('/;/',$row['authorname']);
 			$a=0;

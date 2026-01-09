@@ -3,43 +3,53 @@
 		<div class="row justify-content-center gapAboveLarge">
 			<div class="col-sm-12 col-md-8">
 				<div class="extra-info-bar fixed-top">	
-					<h1 class="clr1 pt-5">Archive &gt; Authors</h1>
+					<h1 class="clr1 pt-5">மலர்கள் &gt; ஆசிரியர்கள்</h1>
 					<div class="alphabet">
-						<span class="letter"><a href="authors.php?letter=A">A</a></span>
-						<span class="letter"><a href="authors.php?letter=B">B</a></span>
-						<span class="letter"><a href="authors.php?letter=C">C</a></span>
-						<span class="letter"><a href="authors.php?letter=D">D</a></span>
-						<span class="letter"><a href="authors.php?letter=E">E</a></span>
-						<span class="letter"><a href="authors.php?letter=F">F</a></span>
-						<span class="letter"><a href="authors.php?letter=G">G</a></span>
-						<span class="letter"><a href="authors.php?letter=H">H</a></span>
-						<span class="letter"><a href="authors.php?letter=I">I</a></span>
-						<span class="letter"><a href="authors.php?letter=J">J</a></span>
-						<span class="letter"><a href="authors.php?letter=K">K</a></span>
-						<span class="letter"><a href="authors.php?letter=L">L</a></span>
-						<span class="letter"><a href="authors.php?letter=M">M</a></span>
-						<span class="letter"><a href="authors.php?letter=N">N</a></span>
-						<span class="letter"><a href="authors.php?letter=O">O</a></span>
-						<span class="letter"><a href="authors.php?letter=P">P</a></span>
-						<span class="letter"><a href="authors.php?letter=Q">Q</a></span>
-						<span class="letter"><a href="authors.php?letter=R">R</a></span>
-						<span class="letter"><a href="authors.php?letter=S">S</a></span>
-						<span class="letter"><a href="authors.php?letter=T">T</a></span>
-						<span class="letter"><a href="authors.php?letter=U">U</a></span>
-						<span class="letter"><a href="authors.php?letter=V">V</a></span>
-						<span class="letter"><a href="authors.php?letter=W">W</a></span>
-						<span class="letter"><a href="authors.php?letter=X">X</a></span>
-						<span class="letter"><a href="authors.php?letter=Y">Y</a></span>
-						<span class="letter"><a href="authors.php?letter=Z">Z</a></span>
-						<span class="letter"><a href="authors.php?letter=Special">#</a></span>
+						<span class="letter"><a href="authors.php?letter=அ">அ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஆ">ஆ</a></span>
+						<span class="letter"><a href="authors.php?letter=இ">இ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஈ">ஈ</a></span>
+						<span class="letter"><a href="authors.php?letter=உ">உ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஊ">ஊ</a></span>
+						<span class="letter"><a href="authors.php?letter=எ">எ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஏ">ஏ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஐ">ஐ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஒ">ஒ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஓ">ஓ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஔ">ஔ</a></span>
+						<span class="letter"><a href="authors.php?letter=க">க</a></span>
+						<span class="letter"><a href="authors.php?letter=ங">ங</a></span>
+						<span class="letter"><a href="authors.php?letter=ச">ச</a></span>
+						<span class="letter"><a href="authors.php?letter=ஜ">ஜ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஞ">ஞ</a></span>
+						<span class="letter"><a href="authors.php?letter=ட">ட</a></span>
+						<span class="letter"><a href="authors.php?letter=ண">ண</a></span>
+						<span class="letter"><a href="authors.php?letter=த">த</a></span>
+						<span class="letter"><a href="authors.php?letter=ந">ந</a></span>
+						<span class="letter"><a href="authors.php?letter=ன">ன</a></span>
+						<span class="letter"><a href="authors.php?letter=ப">ப</a></span>
+						<span class="letter"><a href="authors.php?letter=ம">ம</a></span>
+						<span class="letter"><a href="authors.php?letter=ய">ய</a></span>
+						<span class="letter"><a href="authors.php?letter=ர">ர</a></span>
+						<span class="letter"><a href="authors.php?letter=ற">ற</a></span>
+						<span class="letter"><a href="authors.php?letter=ல">ல</a></span>
+						<span class="letter"><a href="authors.php?letter=ள">ள</a></span>
+						<span class="letter"><a href="authors.php?letter=ழ">ழ</a></span>
+						<span class="letter"><a href="authors.php?letter=வ">வ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஶ">ஶ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஷ">ஷ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஸ">ஸ</a></span>
+						<span class="letter"><a href="authors.php?letter=ஹ">ஹ</a></span>
+						<span class="letter"><a href="authors.php?letter=other">#</a></span>
 					</div>
 					<?php include("include_secondary_nav.php");?>
 				</div>
 			</div>
-			<div class="col-sm-12 col-md-8 gapAboveLarge mbsm-5">
-				<p>&nbsp;</p>
-			</div>		
-			
+			<div class="col-sm-12 col-md-8 gapAbove gapBelowLargeSpecial">
+				<p class="mb-sm-5">&nbsp;</p>
+			</div>
+		</div>			
+		<div class="row justify-content-center">	
 <?php
 
 include("connect.php");
@@ -60,40 +70,43 @@ if(isset($_GET['letter']))
 		exit(1);
 	}
 
-	($letter == '') ? $letter = 'A' : $letter = $letter;
+	($letter == '') ? $letter = 'அ' : $letter = $letter;
 }
 else
 {
-	$letter = 'A';
+	$letter = 'அ';
 }
 
 //~ $query = 'select * from author where authorname like \'' . $letter . '%\' order by authorname';
-if($letter == 'Special')
+if($letter == 'other')
 {
-	$query = "select * from author where authorname not regexp '^[a-z]|^\'[a-z]|^\"[a-z]|^<|^\"<' order by authorname";
+	$query = "SELECT * FROM author WHERE authorname REGEXP '^[A-Za-z]'";
 }
 else
 {
-	$query = "select * from author where authorname like '$letter%' union select * from author where authorname like '\"$letter%' union select * from author where authorname like '\'$letter%' order by TRIM(BOTH '\'' FROM TRIM(BOTH '\"' FROM authorname))";
+	$query = "select * from author where authorname like '$letter%'  union select * from author where authorname like '\"$letter%' union select * from author where authorname like '\'$letter%' order by TRIM(BOTH '\'' FROM TRIM(BOTH '\"' FROM authorname))";
 }
 
 $result = $db->query($query); 
 $num_rows = $result ? $result->num_rows : 0;
+$firstEntry = true;
 
 if($num_rows > 0)
 {
+
 	while($row = $result->fetch_assoc())
 	{
-		echo '<div class="col-sm-12 col-md-3">';
-		echo '<div class="author">';
-		echo '	<span class="aAuthor"><a href="auth.php?authid=' . $row['authid'] . '&amp;author=' . urlencode($row['authorname']) . '">' . $row['authorname'] . '</a>';
+		{
+		echo '<div class="author text-left">';
+		echo '	<span class="aAuthor"><a href="auth.php?authid=' . $row['authid'] . '&amp;author=' . urlencode($row['authorname']) . '">' . $row['authorname'] . '</a> ';
 		echo '</div>';
-		echo '</div>';
+	}
 	}
 }
 else
 {
-	echo '<p class="sml mt-5 text-center clr2">Sorry! No author names were found to begin with the letter \'' . $letter . '\' in Tattvaloka</p>';
+	// echo '<p class="sml mt-5 text-center clr2">ಇಲ್ಲಿ \'' . $letter . '\' ಅಕ್ಷರದಿಂದ ಪ್ರಾರಂಭವಾಗುವ ಹೆಸರಿನ ಲೇಖಕರಿಲ್ಲ</p>';
+	echo '<p class="sml mt-5 text-center clr2">கடிதம் \'' . $letter . '\' என்று ஆரம்பத்தில் எந்த ஆசிரியர்கள் உள்ளன';
 }
 
 if($result){$result->free();}

@@ -1,10 +1,10 @@
-<?php include("../inc/include_header.php");?>
+<?php include("include_header.php");?>
 <main class="cd-main-content">
 		<div class="cd-scrolling-bg cd-color-2">
 			<div class="cd-container sml">
 				<h1 class="clr1 gapBelowSmall">Help</h1>
 				<p>
-					<span class="clr1">A short desription on how to use the DVD</span><br />This DVD provides high-resolution scans of the entire collection of <span class="clr">The Vedanta Kesari,</span> which can be accessed by clicking on <span class="clr1"><a href="volumes.html">Years</a></span> link.
+					<span class="clr1">A short desription on how to use the DVD</span><br />This DVD provides high-resolution scans of the entire collection of <span class="clr">The Shankara Krupa,</span> which can be accessed by clicking on <span class="clr1"><a href="volumes.html">Years</a></span> link.
 				</p>
 				<ul class="dot">
 					<li>Table of Contents of each month (click on <span class="clr1"><a href="volumes.html">Years</a></span> link and select a month)</li>
@@ -20,7 +20,7 @@
 				<p class=" clr1">Troubleshooting FAQ</p>
 				<p>
 					<span class="clr1 bld">Q.</span> AutoRun fails to start the archive.<br />
-					<span class="clr1 bld">A.</span> Click on the file 'Vedanta_Kesari' in the DVD drive.
+					<span class="clr1 bld">A.</span> Click on the file 'Shankara_Krupa' in the DVD drive.
 				</p>
 				<p>
 					<span class="clr1 bld">Q.</span> A runtime error is encountered.<br />
@@ -32,7 +32,7 @@
 				</p>
 				<p>
 					<span class="clr1 bld">Q.</span> The DVD tray is locked and I am not able to remove the DVD.<br />
-					<span class="clr1 bld">A.</span> The archive might still be active. Right-click on the tray icon 'The Vedanta Kesari Archive' and click on 'Close The Vedanta Kesari Archive' and then remove the DVD.
+					<span class="clr1 bld">A.</span> The archive might still be active. Right-click on the tray icon 'The Shankara Krupa Archive' and click on 'Close The Shankara Krupa Archive' and then remove the DVD.
 				</p>
 				<p>For further queries and a more elaborate FAQ please visit <span class="clr1"><a href="http://www.srirangadigital.com/" target="_blank">http://www.srirangadigital.com/</a></span></p>
 				<p><span class="clr1">Using the DjVu Plug-in</span><br />The full documentation of the DjVu plug-in can be viewed by displaying a DjVu document (any document) and pressing the right mouse button and selecting &quot;help&quot; from the menu.</p>
@@ -107,7 +107,7 @@
 						<td class="hright">Go to any particular page</td>
 					</tr>
 				</table>
-			</div>
-		</div>
-	</main>
-<?php include("../inc/include_footer.php");?>
+			</div> <!-- cd-container -->
+		</div> <!-- cd-scrolling-bg -->
+	</main> <!-- cd-main-content -->
+<?php include("include_footer.php");?>

@@ -1,4 +1,8 @@
 <?php
-	$jpg = 'find ../../public/data/001/[0-9][0-9][0-9]/jpg/1/ +mmin 10 -type f -name "*.jpg" -exec rm {} \;';
+	$jpg = 'find ../../../Volumes/jpg/1/ -mmin +10 -type f -name "*.jpg" -exec rm {} \;';
 	exec($jpg);
+	$tif = 'find ../../../Volumes/tif/ -mmin +10 -type f -name "*.tif" -exec rm {} \;';
+	exec($tif);
+	$pdf = 'find ../../../ReadWrite/ -mmin +5 -type f -name "*.pdf" -exec rm {} \;';
+	exec($pdf);
 ?>

@@ -3,7 +3,8 @@
 		<div class="row justify-content-center gapAboveLarge">
 			<div class="col-sm-12 col-md-8">
 				<div class="extra-info-bar fixed-top">	
-					<h1 class="clr1 pt-5">Archive &gt; Volumes</h1>
+					<!-- <h1 class="clr1 pt-5">ಸಂಗ್ರಹ &gt; ಸಂಪುಟಗಳು</h1> -->
+					<h1 class="clr1 pt-5">மலர்கள் &gt; மலர்கள்</h1>
 <?php include("include_secondary_nav.php");?>
 				</div>		
 			</div>
@@ -14,7 +15,7 @@
 include("connect.php");
 require_once("common.php");
 
-$query = 'select distinct volume,year from article order by volume';
+$query = 'select distinct volume from article order by volume DESC';
 
 $result = $db->query($query); 
 $num_rows = $result ? $result->num_rows : 0;
@@ -27,12 +28,21 @@ if($num_rows > 0)
 {
 	while($row = $result->fetch_assoc())
 	{
+
+		$yearString = getYear($row['volume']);
+
 		echo '<div class="card shadow col-sm-4 col-md-1">';
 		echo '<a href="get-parts.php?volume=' . $row['volume'] . '"><img src="img/covers/v/' . $row['volume'] . '.jpg" class="img-fluid" alt="volume '. intval($row['volume']) .'" /></a>';
 		echo '<div class="card-body">';
-		echo '<a href="get-parts.php?volume=' . $row['volume'] . '"> '. ($row['year']) .'</a>';
+		
+		if($yearString)	
+			echo '<a href="get-parts.php?volume=' . $row['volume'] . '">மலர் '. intval($row['volume']) .'<br /><span class="small align-middle badge d-inline text-bg-warning">('. $yearString .')</span></a>';
+		else
+			echo '<a href="get-parts.php?volume=' . $row['volume'] . '">மலர் '. intval($row['volume']) .'</a>';
+
 		echo '</div>';
 		echo '</div>';
+
 	}
 }
 

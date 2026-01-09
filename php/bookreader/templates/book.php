@@ -29,7 +29,7 @@
 		}
 		
 
-		$imgUrl =  '../../../Volumes/jpg/2/' . $volume . '/' . $part;
+		$imgUrl =  '../../../Volumes/jpg/1/' . $volume . '/' . $part;
 		
 		$imgList=scandir($imgUrl);
 		$cmd='';
@@ -43,7 +43,7 @@
 		}
 
 		$book["imglist"]=array_values($book["imglist"]);
-		$book["Title"] = "Tattvaloka Magazine";
+		$book["Title"] = "Amman Darshanam";
 		$book["TotalPages"] = count($book["imglist"]);
 		$book["SourceURL"] = "";
 		$result = array_keys($book["imglist"], $page);

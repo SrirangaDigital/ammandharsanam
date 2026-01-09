@@ -3,6 +3,7 @@
 Primary style
 
 -------------------------------- */
+
 :root{
   --main-text-color: #3d3536;
   --navlink-hover-color: #9c581b;
@@ -11,16 +12,27 @@ Primary style
   --archive-icon-color: #AAA;
   --article-download-color: #3372df;
   --second-nav-background-color: #EEE;
+  --second-nav-links-color: #3d3536;
   --homepage-banner-background-color:rgba(255, 254, 204, 0.9);
   --paralax-heading-h3: brown;
-  --breadcrumb-bar-color: #3372df;
+  --breadcrumb-bar-color: #3372df;  
+  --article-border-color: #3372df;
   --article-feature-color: #be0709;
   --issue-color: #777;
+  --nav-bg-color: rgb(248, 249, 250);
+  --home-page-shloka-color: #000;
+  --info-color: #be0709;
 }
 
-@font-face {
- font-family: 'Siddhantaa';
- src: url('siddhanta.ttf');
+.dark-mode{
+  --site-background-color: #818589;
+  --main-text-color: #FFF;  
+  --head-background-color: rgba(96, 130, 182, 0.5);
+  --article-border-color: #d3dff5;
+  --article-feature-color: #f5c4c5;
+  --issue-color: #bff5eb;
+  --nav-bg-color: rgb(206, 212, 218);
+  --info-color: #be0709;
 }
 
 
@@ -37,7 +49,7 @@ html * {
 
 body {
   font-size: 100%;
-  font-family: "Roboto", sans-serif;
+  font-family: "Noto Serif Kannada", "Roboto", serif;
   color: var(--main-text-color);
   background-color: var(--site-background-color);
 }
@@ -58,11 +70,6 @@ a {
 }
 
 
-/* -------------------------------- 
-
-Modules - reusable parts of our design
-
--------------------------------- */
 
 .clr1{
   color: var(--breadcrumb-bar-color) !important;
@@ -84,8 +91,76 @@ Modules - reusable parts of our design
   color: var(--issue-color)  !important;
 }
 
+.info-color{
+  color: var(--info-color)  !important;
+}
 
 
+
+.buttonBgClr1{
+  color: #3372df;
+}
+
+.buttonBgClr2{
+  color: #be0709;
+}
+
+.buttonBgClr3{
+  color: #3d3536;
+}
+
+.buttonBgClr4{
+  color: #9c581b;
+}
+
+.buttonBgClr5{
+  color: #777;
+}
+
+.simpleTable{
+  margin: 0 auto;
+}
+
+.simpleTable td:first-child {
+  border-right: 1px solid #EEE;
+  border-bottom: 1px solid #EEE;
+  padding: 20px 30px 20px 0;
+}
+
+.simpleTable td:last-child {
+  padding: 20px 0px 20px 30px;
+  border-bottom: 1px solid #EEE;
+}
+
+.bquote{
+  font-size: 0.9em;
+  width: 90%;
+  padding-left: 100px;
+}
+
+.bquoteOpen{
+  float: left;
+  margin-top: -20px;
+}
+
+.bquoteClose{
+  float: right;
+  margin: 130px 0 0 0;
+}
+
+.bquoteOpen:before {
+  content: "\201C";
+  font-size: 120px;
+  color: #7a7a7a;
+  font-family: "Noto Serif Kannada", serif;
+}
+
+.bquoteClose:after {
+  content: "\201D";
+  font-size: 120px;
+  color: #7a7a7a;
+  font-family: "Noto Serif Kannada", serif;
+}
 
 .gapAbove {
   margin-top: 75px !important;  
@@ -111,6 +186,27 @@ Modules - reusable parts of our design
   margin-bottom: 125px !important;  
 }
 
+.gapBelowLargeSpecial{
+  margin-bottom: 100px !important;
+}
+
+/*.editor {
+  width: 250px;
+  text-align: center;
+  margin: 25px;
+  float: left;
+}
+
+.editor div:first-child {
+  font-size: 0.7em;
+  border-bottom: 1px solid #be0709;
+  line-height: 2.5;
+}
+
+.editor div:last-child {
+  font-size: 0.9em;
+  line-height: 2.5;
+}*/
 
 .archiveIcon{
   width: 140px;
@@ -141,6 +237,68 @@ Modules - reusable parts of our design
   line-height: 2;
 }
 
+.aNumber {
+  width: 90%;
+  text-align: left;
+  margin: 10px 0px 10px 0px;
+  float: left; 
+}
+
+.aNumber div:first-child {
+  font-size: 0.7em;
+  border-bottom: 1px solid #3372df;
+  line-height: 2.5;
+  padding-left: 20px;
+  font-weight: 400;
+}
+
+.aNumber div:last-child {
+  font-size: 0.9em;
+  line-height: 2.5;
+  padding-left: 20px;
+}
+
+.aNumber {
+  color: inherit;
+}
+
+.seeMore{
+  width: 100%;
+  text-align: right;
+  float: right;
+  font-size: 0.9em;
+}
+
+.imgSample{
+  width: 100px;
+  border: 10px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  margin-right: 40px;
+  margin-left: 20px;
+}
+
+.tArchive {
+  font-size: 20px;
+  line-height: 1.5;
+  color: black;
+  font-weight: 300;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.tArchive td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.tArchive tr>td:first-child {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.tArchive tr>td:last-child {
+  text-align: left;
+  padding-left: 5px;
+}
 
 .article{
   margin: 30px 0;
@@ -148,7 +306,7 @@ Modules - reusable parts of our design
   box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
   line-height: 1.5;
   min-height: 50px;
-  border-left: 5px solid #3372df;
+  border-left: 5px solid var(--article-border-color);
 }
 
 .article:hover{
@@ -159,8 +317,8 @@ Modules - reusable parts of our design
   font-size: 20px;
 }
 .article .download{
-	font-size:15px;
-	color: var(--article-download-color);
+  font-size:15px;
+  color: var(--article-download-color);
 }
 .article .aAuthor{
   font-size: 16px;
@@ -192,10 +350,35 @@ Modules - reusable parts of our design
   font-size: 16px;
 }
 
+.year{
+  margin: 30px 0 0 0;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  line-height: 1.5;
+  min-height: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.year .aIssue{
+  font-size: 16px;
+  padding: 10px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.year .aIssue:hover, .year .active{
+  background-color: #EEE;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  box-shadow: 0px -1px 2px rgba(34, 25, 25, 0.4);
+}
 
 .alphabet .letter{
-  font-size: 16px;
-  margin-right: 10px;
+  color: var(--second-nav-links-color);
+  font-size: 12px;
+  margin-right: 7px;
 }
 
 .alphabet .letter a:HOVER{
@@ -203,17 +386,15 @@ Modules - reusable parts of our design
   text-decoration: underline;
 }
 
-
-
-.moreNav{
-  display: inline-block;
+#head{
+  background-image: url(../img/bg1.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--head-background-color);
+  height: 100vh;
+  position: relative;
 }
-
-.count{
-  font-style: italic;
-}
-
-
 
 .headbanner{
   height: 100%;
@@ -253,8 +434,24 @@ Modules - reusable parts of our design
 
 .volumes .card-body{
   font-size: 16px;
-  padding: 0px 0px;
+  padding: 4px 0px;
   text-align: center;
+  line-height: 1.3;
+}
+
+.volumes .card-body a{
+  font-family: "Noto Serif Kannada", "Roboto", serif;
+  font-size: 14px;
+}
+
+
+.monthdisplay{
+  font-size: 13px !important;
+}
+
+
+nav.navbar{
+  background-color: var(--nav-bg-color);
 }
 
 nav.cd-sec-main-nav ul{
@@ -267,7 +464,8 @@ nav.cd-sec-main-nav ul li{
 }
 
 nav.cd-sec-main-nav ul li a{
-  font-size: 16px;
+  font-size: 14px;
+  color: var(--second-nav-links-color);
 }
 
 nav.cd-sec-main-nav ul li a:HOVER{
@@ -279,10 +477,19 @@ nav.cd-sec-main-nav ul li a:HOVER{
 
 @media (min-width: 768px) { 
 
+  .gapBelowLargeSpecial{
+    margin-bottom: 0px !important;
+  }
+
+  .alphabet .letter{
+    color: var(--second-nav-links-color);
+    font-size: 16px;
+    margin-right: 8px;
+  }
+
   header nav ul.navbar-nav li a{
     margin-left: 2.5em;
   }  
-
 
   header nav a.navbar-brand{
     margin-left: 1.5em;
@@ -323,7 +530,7 @@ header nav ul.navbar-nav li a{
   background: transparent;
   padding: .6em 0em;
   border-top: none;
-  color: var(--main-text-color);
+/*  color: var(--main-text-color);*/
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.875rem;
@@ -332,6 +539,14 @@ header nav ul.navbar-nav li a{
 header nav ul.navbar-nav li a:HOVER{
   color: var(--navlink-hover-color);
 }
+
+
+i#theme-toggler{
+  color: #000;
+  font-size: 24px;
+}
+
+.dropdown-menu { background-color: #CCC !important; }
 
 header nav ul.navbar-nav li.dropdown ul{
   padding: 1em 1em;
@@ -383,3 +598,204 @@ footer {
   margin-bottom: 16px !important;
   text-align: center; 
 }
+
+.issue{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #EEE;  
+ }
+
+.issueHolder{
+  margin: 0px auto 0 auto;
+  box-shadow: 0px 0px 2px rgba(34, 25, 25, 0.4);
+  line-height: 1.5;
+  display: none;
+}
+
+.issue .aIssue{
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.issue .deLimiter{
+  font-size: 14px;
+  padding: 10px 0 10px 0;
+}
+
+.delim:not(:last-child):after{
+  content: " | ";
+  color: #777;
+  margin: 0 10px;
+}
+
+.arrow-scroll {
+  bottom: 100px;
+  right: 40px;
+  cursor: pointer;
+  position: static;
+  position: absolute;
+  text-align: center;
+  background-color: white;
+  font-size: 40px;
+  border-radius: 50%;
+  min-width: 40px;
+  min-height: 40px;
+  opacity: 0.9;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+  line-height: 1;
+}
+
+.moreNav{
+  display: inline-block;
+}
+
+.archive_search {
+  margin: 0em 0em 0em 3em;
+  min-height: 30em;
+  line-height: 1.5em;
+  font-size: 0.9em;  
+}
+.downloadspan {
+	font-size: 0.7em;
+	color: #3D6B97;
+}
+.archive_search table .left{
+  width: 67px;
+  height: 30px;
+  text-align: right;
+  padding: 1em 2em 1em 0;
+  vertical-align: middle;
+  border-right: 1px solid #CCCCCC;
+  color: #3372df !important;
+  font-weight: 400;
+}
+
+.archive_search table .right{
+  width: 180px;
+  text-align: left;
+  vertical-align: middle;
+  padding: 1em 0 1em 2em;
+}
+
+.archive_search input, .archive_search select{
+  background: none;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Noto Serif Kannada", serif;
+  color: #555;
+  outline: none;
+  padding: 10px;
+}
+
+.archive_search .wide{
+  width: 20em;
+}
+
+.archive_search .med{
+  width: 7em;
+}
+
+.count{
+  font-style: italic;
+}
+
+.bgClr1{
+  opacity: 0.5;
+  background-color: #f2c472;
+}
+
+.bgClr2{
+  opacity: 0.7;
+  background-color: #518FD9;
+}
+
+.bgClr3{
+  opacity: 0.7;
+  background-color: #ffffff;
+}
+
+.bgClr4{
+  opacity: 0.7;
+  background-color: #f2c472;
+}
+
+.bgClr5{
+  opacity: 0.7;
+  background-color: #BEDCFF;
+}
+
+.bgClr6{
+  opacity: 0.75;
+  background-color: #fff;
+}
+
+.banner h1 {
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.bannerHalf h1 {
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+} 
+.banner h2 {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.bannerHalf h2 {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.itl{
+  font-style: italic;
+}
+
+.fRight{
+  float: right;  
+}
+
+.fSan{
+  font-family: "Noto Serif Kannada", serif;
+}
+
+.fKan{
+  color: var(--home-page-shloka-color);
+  font-family: "Noto Serif Kannada", serif;
+}
+
+.sml{
+  font-size: 18px !important;
+}
+
+.bld{
+  font-weight: bold !important;
+}
+
+.alignLeft{
+  text-align: left !important;
+  padding-left: 50px;
+}
+
+.alignRight{
+  text-align: right !important;
+}
+
+
+
