@@ -100,11 +100,11 @@ while($line)
 		if($page eq $prev_pages)
 		{
 			$count++;
-			$id = "shankara_krupa_" . $volume . "_" . $part . "_" . $page . "_" . $count; 
+			$id = "ammandharsanam_" . $volume . "_" . $part . "_" . $page . "_" . $count; 
 		}
 		else
 		{
-			$id = "shankara_krupa_" . $volume . "_" . $part . "_" . $page . "_0";
+			$id = "ammandharsanam_" . $volume . "_" . $part . "_" . $page . "_0";
 			$count = 0;
 		}
 		$prev_pages = $page;
