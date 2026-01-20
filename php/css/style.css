@@ -387,11 +387,13 @@ a {
 }
 
 #head{
-  background-image: url(../img/bg1.jpg);
+  background-image: url(../img/cover.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-color: var(--head-background-color);
+  background-size: 2000px 1500px;
+  background-position: center top; 
   height: 100vh;
   position: relative;
 }
