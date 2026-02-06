@@ -10,7 +10,7 @@
 		</div>
 	</div>
 
-	<div class="container-fluid mt-5 maincontent">
+	<!-- <div class="container-fluid mt-5 maincontent">
 		<div class="row justify-content-center">
 			<div class="col-md-8">
 				<h2 class="clr2 my-5">ಸಂಗ್ರಹ</h2>
@@ -41,6 +41,6 @@
 
 			</div>
 		</div>
-	</div>		
+	</div>		 -->
 
 <?php include("inc/include_footer.php");?>
