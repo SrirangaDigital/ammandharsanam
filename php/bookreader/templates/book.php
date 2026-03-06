@@ -43,7 +43,7 @@
 		}
 
 		$book["imglist"]=array_values($book["imglist"]);
-		$book["Title"] = "Amman Darshanam";
+		$book["Title"] = "அம்மன் தரிசனம்";
 		$book["TotalPages"] = count($book["imglist"]);
 		$book["SourceURL"] = "";
 		$result = array_keys($book["imglist"], $page);
